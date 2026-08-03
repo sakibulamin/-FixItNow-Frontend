@@ -1,34 +1,171 @@
-# FixItNow — Frontend
+# FixItNow
 
-Next.js 16 (App Router) + TypeScript frontend for FixItNow, consuming the existing backend at `NEXT_PUBLIC_API_BASE_URL` (`http://localhost:5000/api` by default).
+A full-stack Home Service Marketplace built with Next.js, TypeScript, Tailwind CSS, React Query, Express.js, PostgreSQL, Prisma, and SSLCommerz.
 
-## Setup
+## Live Demo
+
+Frontend: https://your-frontend.vercel.app
+
+Backend: https://your-backend.onrender.com
+
+## GitHub Repositories
+
+Frontend:
+https://github.com/yourusername/fixitnow-frontend
+
+Backend:
+https://github.com/yourusername/fixitnow-backend
+
+---
+
+## 📌 Project Overview
+
+FixItNow is a home service marketplace where customers can book technicians for different services such as plumbing, electrical, cleaning, painting, and more.
+
+There are three user roles:
+
+- Customer
+- Technician
+- Admin
+
+Customers can browse services, create bookings, complete payments using SSLCommerz, and leave reviews.
+
+Technicians manage services and bookings.
+
+Admins manage users, categories, and monitor platform activities.
+
+---
+
+## ✨ Features
+
+### Authentication
+
+- JWT Authentication
+- Login
+- Registration
+- Role Based Access
+- Protected Routes
+
+### Customer
+
+- Browse Services
+- View Technician Details
+- Book Services
+- SSLCommerz Payment
+- Booking History
+- Review Technician
+- Update Profile
+
+### Technician
+
+- Create Technician Profile
+- Manage Services
+- Accept / Reject Bookings
+- Update Booking Status
+- Availability Management
+
+### Admin
+
+- Dashboard Statistics
+- Manage Users
+- Manage Categories
+- View Bookings
+
+---
+
+## 💳 Payment
+
+SSLCommerz Payment Gateway
+
+Payment Status
+
+- Pending
+- Completed
+- Failed
+- Cancelled
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- React Query
+- React Hook Form
+- Zod
+- Axios
+- Sonner
+
+### Backend
+
+- Node.js
+- Express.js
+- TypeScript
+- Prisma ORM
+- PostgreSQL
+- JWT
+
+---
+
+## Folder Structure
+
+```
+src
+ ├── app
+ ├── components
+ ├── features
+ ├── hooks
+ ├── lib
+ ├── providers
+ └── types
+```
+
+---
+
+##  Installation
+
+Clone repository
+
+```bash
+git clone https://github.com/yourusername/fixitnow-frontend.git
+```
+
+Install packages
 
 ```bash
 npm install
-cp .env.example .env.local
+```
+
+Create environment variables
+
+```
+NEXT_PUBLIC_API_URL=
+```
+
+Run project
+
+```bash
 npm run dev
 ```
 
-Requires Node.js ≥ 20.9 (Next.js 16 requirement). Make sure your backend is running on the URL configured in `.env.local` before starting the dev server — this frontend has no mock data and every feature module talks to the real API.
+---
 
-## Stack
+## Build
 
-Next.js 16, TypeScript, Tailwind CSS v4, Shadcn UI, TanStack React Query, Axios, React Hook Form + Zod, Framer Motion, Lucide React, Sonner, date-fns, Recharts.
+```bash
+npm run build
+```
 
-## Route protection
+---
 
-Role-based route protection lives in `src/proxy.ts` — Next.js 16 renamed `middleware.ts` to `proxy.ts` (same request-interception behavior, now on the Node.js runtime instead of Edge). Do not add a `middleware.ts` file; `proxy.ts` is the only convention this project uses.
+## Author
 
-## Module scope so far
+Sakibul Amin
 
-- **Module 1** — scaffolding, TS/ESLint/Prettier config, Tailwind v4 tokens, root layout/providers, typed API client
-- **Module 2** — JWT auth (login/register/logout), `proxy.ts` route protection, AuthGuard
-- **Module 3** — public pages: home, services, technicians, search/filter/sort/pagination
-- **Module 4** — customer dashboard: bookings, payments, reviews, editable profile/settings
-- **Module 5** — technician dashboard: bookings, availability, services, reviews, earnings, profile
-- **Module 6** — admin dashboard: statistics, user management (ban/unban), full category CRUD
-- **Module 7** — payment flow: SSLCommerz redirect, payment success/cancel pages with status polling
-- **Module 8** — final polish (in progress)
-
-See `FixItNow-Implementation-Plan.md` and `API_INTEGRATION.md` for full details, confirmed endpoint mappings, and known backend gaps.
+GitHub:
+https://github.com/sakibulamin
