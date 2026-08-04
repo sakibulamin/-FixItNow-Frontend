@@ -6,13 +6,7 @@ import { useState } from "react";
 import { Menu, Wrench } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import {Sheet,SheetContent,SheetHeader,SheetTitle,SheetTrigger} from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { UserMenu } from "@/components/shared/user-menu";
 import { useAuth } from "@/providers/auth-provider";
@@ -23,6 +17,7 @@ const NAV_LINKS = [
   { href: PUBLIC_ROUTES.HOME, label: "Home" },
   { href: PUBLIC_ROUTES.SERVICES, label: "Services" },
   { href: PUBLIC_ROUTES.TECHNICIANS, label: "Technicians" },
+  { href: PUBLIC_ROUTES.ABOUT, label: "About" },
 ];
 
 export function Navbar() {

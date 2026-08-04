@@ -1,15 +1,10 @@
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+  useMutation, useQuery, useQueryClient,
   type UseMutationOptions,
   type UseQueryOptions,
 } from "@tanstack/react-query";
 import {
-  createBooking,
-  deleteBooking,
-  getBookingById,
-  getBookings,
+  createBooking, deleteBooking, getBookingById, getBookings,
   updateBookingStatus,
 } from "@/features/bookings/api";
 import type { ApiError } from "@/types/api";
@@ -67,11 +62,6 @@ interface UpdateStatusVariables {
   payload: UpdateBookingStatusPayload;
 }
 
-/**
- * Optimistically applies the new status to both the list cache and the
- * detail cache before the server confirms, then rolls back on error and
- * always re-invalidates on settle so the confirmed server state wins.
- */
 export function useUpdateBookingStatusMutation(
   options?: UseMutationOptions<
     Booking,

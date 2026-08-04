@@ -21,7 +21,7 @@ export default function CustomerProfilePage() {
         <h1 className="font-display text-2xl font-semibold">Profile</h1>
         <p className="text-muted-foreground mt-1 text-sm">
           Update your name, phone, and address. Email, role, and account
-          status can&apos;t be changed here.
+          status can not be changed here.
         </p>
       </div>
 

@@ -7,8 +7,7 @@ import { PackageSearch } from "lucide-react";
 
 import { useServicesQuery } from "@/features/services/hooks";
 import { ServiceCard } from "@/features/services/components/service-card";
-import {
-  ServiceFilters,
+import {ServiceFilters,
   type ServiceFilterState,
 } from "@/features/services/components/service-filters";
 import { ServiceCardSkeleton } from "@/components/skeletons/service-card-skeleton";
@@ -33,7 +32,7 @@ export function ServicesPageContent() {
 
   const debouncedQuery = useDebouncedValue(filters.q, 300);
 
-  // Only the confirmed backend params are actually sent to GET /services.
+ 
   const { data, isPending, isError, refetch } = useServicesQuery({
     category: filters.category,
     location: filters.location,

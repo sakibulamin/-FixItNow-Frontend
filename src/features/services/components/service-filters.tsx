@@ -4,13 +4,7 @@ import { Search, SlidersHorizontal, X } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from "@/components/ui/select";
 import { useCategoriesQuery } from "@/features/categories/hooks";
 import type { ServiceFilters as ServiceFiltersType } from "@/types/service";
 

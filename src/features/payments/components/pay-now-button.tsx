@@ -7,10 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useInitPaymentMutation } from "@/features/payments/hooks";
 
 export function PayNowButton({ bookingId }: { bookingId: string }) {
-  // Tracks the window between a successful POST /payments/init/:bookingId
-  // and the actual browser navigation to the gateway — kept separate from
-  // the mutation's own isPending so the button can't be double-clicked
-  // during that gap (the mutation resolves before navigation completes).
+ 
   const [isRedirecting, setIsRedirecting] = useState(false);
 
   const initPayment = useInitPaymentMutation({

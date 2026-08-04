@@ -10,16 +10,10 @@ import type { Role } from "@/types/enums";
 
 interface AuthGuardProps {
   children: React.ReactNode;
-  /** Roles allowed to view this subtree. Omit to just require any login. */
   allowedRoles?: Role[];
 }
 
-/**
- * Client-side guard used inside role-based layouts as a second line of
- * defense behind proxy.ts — covers the moment between client hydration
- * and the auth session resolving, and reacts immediately if a session
- * expires while the user is already on the page.
- */
+
 export function AuthGuard({ children, allowedRoles }: AuthGuardProps) {
   const router = useRouter();
   const { user, isLoading, isAuthenticated } = useAuth();

@@ -1,4 +1,3 @@
-/** Mirrors enum.prisma exactly — do not add values not present in the schema. */
 
 export type Role = "CUSTOMER" | "TECHNICIAN" | "ADMIN";
 

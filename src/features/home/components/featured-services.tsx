@@ -12,11 +12,6 @@ import { ErrorState } from "@/components/shared/error-state";
 import { Button } from "@/components/ui/button";
 import { PUBLIC_ROUTES } from "@/lib/routes";
 
-/**
- * No "featured" flag or endpoint exists on the backend — this pulls the
- * real GET /services result and shows the top 6, ranked by the offering
- * technician's averageRating where available. Nothing here is mock data.
- */
 export function FeaturedServices() {
   const { data: services, isPending, isError, refetch } = useServicesQuery();
 

@@ -1,4 +1,4 @@
-/** Mirrors Category in category.prisma. */
+
 export interface Category {
   id: string;
   name: string;

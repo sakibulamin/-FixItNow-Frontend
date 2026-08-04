@@ -8,11 +8,7 @@ export const authKeys = {
   me: ["auth", "me"] as const,
 };
 
-/**
- * Hydrates the current user from GET /auth/me. Disabled by default until
- * the caller (AuthProvider) confirms a token cookie exists, so we don't
- * fire an authenticated request with no token present.
- */
+
 export function useMeQuery(enabled: boolean) {
   return useQuery<User, ApiError>({
     queryKey: authKeys.me,

@@ -1,7 +1,6 @@
 import type { User } from "@/types/user";
 import type { TechnicianProfile } from "@/types/technician";
 
-/** Mirrors Review in review.prisma. */
 export interface Review {
   id: string;
   customerId: string;
@@ -13,11 +12,7 @@ export interface Review {
   technician?: TechnicianProfile;
 }
 
-/**
- * Confirmed request body for POST /reviews. Note: no `bookingId` field
- * exists in the documented example — reviews aren't backend-linked to a
- * specific booking, so this type intentionally has no bookingId.
- */
+
 export interface CreateReviewPayload {
   customerId: string;
   technicianId: string;

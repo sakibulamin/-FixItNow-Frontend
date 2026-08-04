@@ -1,10 +1,6 @@
 import { useMemo, useState } from "react";
 
-/**
- * Paginates an already-fetched array on the client. Used because the
- * confirmed backend endpoints (GET /services, GET /technicians) don't
- * expose page/limit query params — see implementation plan gap #7.
- */
+
 export function usePagination<T>(items: T[], pageSize: number) {
   const [page, setPage] = useState(1);
 

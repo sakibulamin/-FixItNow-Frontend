@@ -8,17 +8,9 @@ import { Loader2, Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import {Form,FormControl,FormField,FormItem,FormLabel,FormMessage} from "@/components/ui/form";
 import { useUpdateTechnicianProfileMutation } from "@/features/technicians/hooks";
-import {
-  technicianProfileSchema,
+import { technicianProfileSchema,
   type TechnicianProfileFormValues,
 } from "@/features/technicians/schema";
 import type { TechnicianProfile } from "@/types/technician";

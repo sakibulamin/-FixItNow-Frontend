@@ -9,16 +9,7 @@ import { ConfirmDialog } from "@/components/shared/confirm-dialog";
 import { useUpdateBookingStatusMutation } from "@/features/bookings/hooks";
 import type { BookingStatus } from "@/types/enums";
 
-/**
- * Maps each status to the transitions a technician is actually allowed to
- * make from here, following the booking lifecycle exactly:
- * REQUESTED -> ACCEPTED | DECLINED (technician's call)
- * PAID -> IN_PROGRESS (once the customer has paid)
- * IN_PROGRESS -> COMPLETED
- * Every other status (ACCEPTED awaiting payment, COMPLETED, DECLINED,
- * CANCELLED) has no technician-side action — those are either waiting on
- * the customer or already terminal.
- */
+
 export function TechnicianBookingActions({
   bookingId,
   status,

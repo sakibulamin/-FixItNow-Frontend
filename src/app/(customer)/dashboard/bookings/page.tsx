@@ -8,13 +8,7 @@ import { BookingCard } from "@/features/bookings/components/booking-card";
 import { BookingCardSkeleton } from "@/components/skeletons/booking-card-skeleton";
 import { EmptyState } from "@/components/shared/empty-state";
 import { ErrorState } from "@/components/shared/error-state";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import {Select,SelectContent,SelectItem,SelectTrigger,SelectValue} from "@/components/ui/select";
 import { BOOKING_STATUSES } from "@/lib/constants";
 import { humanizeEnum } from "@/lib/utils";
 import type { BookingStatus } from "@/types/enums";

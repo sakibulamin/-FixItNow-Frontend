@@ -11,11 +11,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { ErrorState } from "@/components/shared/error-state";
 import { getInitials } from "@/lib/utils";
 
-/**
- * No dedicated "testimonials" endpoint exists — this reads real
- * GET /reviews data and surfaces the highest-rated reviews that include
- * a comment. Nothing here is placeholder or mock content.
- */
+
 export function TestimonialsSection() {
   const { data: reviews, isPending, isError, refetch } = useReviewsQuery();
 

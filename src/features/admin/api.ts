@@ -4,7 +4,7 @@ import type { Booking } from "@/types/booking";
 import type { User } from "@/types/user";
 import type { UserStatus } from "@/types/enums";
 
-/** GET /admin/dashboard — confirmed fields only, taken verbatim from the API doc. */
+/** GET /admin/dashboard —*/
 export function getAdminDashboardStats() {
   return apiClient.get<AdminDashboardStats>("/admin/dashboard");
 }
@@ -23,11 +23,7 @@ export interface UpdateAdminUserStatusPayload {
   status: UserStatus;
 }
 
-/**
- * PATCH /admin/users/:id. Both `/users/:id` and `/admin/users/:id` can set
- * `status` per the Postman collection — the admin-scoped route is used
- * here exclusively for consistency with the rest of this dashboard.
- */
+
 export function updateAdminUserStatus(id: string, payload: UpdateAdminUserStatusPayload) {
   return apiClient.patch<User, UpdateAdminUserStatusPayload>(`/admin/users/${id}`, payload);
 }

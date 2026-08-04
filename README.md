@@ -16,17 +16,17 @@ https://github.com/yourusername/fixitnow-frontend
 Backend:
 https://github.com/yourusername/fixitnow-backend
 
----
 
-## 📌 Project Overview
+
+## Project Overview
 
 FixItNow is a home service marketplace where customers can book technicians for different services such as plumbing, electrical, cleaning, painting, and more.
 
 There are three user roles:
 
-- Customer
-- Technician
-- Admin
+ Customer
+ Technician
+ Admin
 
 Customers can browse services, create bookings, complete payments using SSLCommerz, and leave reviews.
 
@@ -34,138 +34,103 @@ Technicians manage services and bookings.
 
 Admins manage users, categories, and monitor platform activities.
 
----
 
-## ✨ Features
+
 
 ### Authentication
 
-- JWT Authentication
-- Login
-- Registration
-- Role Based Access
-- Protected Routes
+JWT Authentication
+Login
+Registration
+Role Based Access
+Protected Routes
 
 ### Customer
 
-- Browse Services
-- View Technician Details
-- Book Services
-- SSLCommerz Payment
-- Booking History
-- Review Technician
-- Update Profile
+ Browse Services
+ View Technician Details
+ Book Services
+ SSLCommerz Payment
+ Booking History
+ Review Technician
+ Update Profile
 
 ### Technician
 
-- Create Technician Profile
-- Manage Services
-- Accept / Reject Bookings
-- Update Booking Status
-- Availability Management
+ Create Technician Profile
+ Manage Services
+ Accept / Reject Bookings
+ Update Booking Status
+ Availability Management
 
 ### Admin
 
-- Dashboard Statistics
-- Manage Users
-- Manage Categories
-- View Bookings
+ Dashboard Statistics
+ Manage Users
+ Manage Categories
+ View Bookings
 
----
 
-## 💳 Payment
+
+## Payment
 
 SSLCommerz Payment Gateway
 
 Payment Status
 
-- Pending
-- Completed
-- Failed
-- Cancelled
+Pending
+Completed
+Failed
+Cancelled
 
----
 
-## 🛠 Tech Stack
 
 ### Frontend
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- Shadcn UI
-- React Query
-- React Hook Form
-- Zod
-- Axios
-- Sonner
+Next.js 16
+React 19
+TypeScript
+Tailwind CSS
+Shadcn UI
+React Query
+React Hook Form
+Zod
+Axios
+Sonner
 
 ### Backend
 
-- Node.js
-- Express.js
-- TypeScript
-- Prisma ORM
-- PostgreSQL
-- JWT
+Node.js
+Express.js
+TypeScript
+Prisma ORM
+PostgreSQL
+JWT
 
----
-
-## Folder Structure
-
-```
-src
- ├── app
- ├── components
- ├── features
- ├── hooks
- ├── lib
- ├── providers
- └── types
-```
-
----
 
 ##  Installation
 
-Clone repository
-
-```bash
-git clone https://github.com/yourusername/fixitnow-frontend.git
-```
-
 Install packages
 
-```bash
+bash
 npm install
-```
 
-Create environment variables
 
-```
-NEXT_PUBLIC_API_URL=
-```
 
 Run project
 
-```bash
+bash
 npm run dev
-```
 
----
 
 ## Build
 
-```bash
+bash
 npm run build
-```
 
----
 
 ## Author
 
 Sakibul Amin
 
-GitHub:
-https://github.com/sakibulamin
+GitHub:https://github.com/sakibulamin

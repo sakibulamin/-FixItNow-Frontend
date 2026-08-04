@@ -9,9 +9,7 @@ import type { Booking } from "@/types/booking";
 
 interface BookingCardProps {
   booking: Booking;
-  /** Overrides the default customer-dashboard link (used from the technician dashboard). */
   href?: string;
-  /** Controls the subtitle: "with {technician}" for customers, "for {customer}" for technicians. */
   perspective?: "customer" | "technician";
 }
 

@@ -12,10 +12,7 @@ import { ErrorState } from "@/components/shared/error-state";
 import { Button } from "@/components/ui/button";
 import { PUBLIC_ROUTES } from "@/lib/routes";
 
-/**
- * No "featured" endpoint exists — this ranks the real GET /technicians
- * result by averageRating and shows the top 3.
- */
+
 export function FeaturedTechnicians() {
   const { data: technicians, isPending, isError, refetch } = useTechniciansQuery();
 

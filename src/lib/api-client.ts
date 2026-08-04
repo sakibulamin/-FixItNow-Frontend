@@ -25,12 +25,7 @@ function toApiError(error: unknown): ApiError {
   );
 }
 
-/**
- * Thin, typed wrapper around the axios instance. Every method returns the
- * unwrapped `data` field from the backend's { success, message, data }
- * envelope, and throws a normalized ApiError on failure so React Query's
- * `error` is always this shape in every feature hook.
- */
+
 export const apiClient = {
   async get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
     try {

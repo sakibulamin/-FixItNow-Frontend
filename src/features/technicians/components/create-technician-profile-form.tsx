@@ -9,18 +9,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import {Form,FormControl,FormField,FormItem,FormLabel,FormMessage} from "@/components/ui/form";
 import { useAuth } from "@/providers/auth-provider";
 import { useCreateTechnicianProfileMutation } from "@/features/technicians/hooks";
-import {
-  technicianProfileSchema,
+import {technicianProfileSchema,
   type TechnicianProfileFormValues,
 } from "@/features/technicians/schema";
 

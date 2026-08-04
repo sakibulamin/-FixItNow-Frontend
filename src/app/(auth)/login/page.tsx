@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import {Card,CardContent,CardDescription,CardHeader,CardTitle} from "@/components/ui/card";
 import { LoginForm } from "@/features/auth/components/login-form";
 
 export const metadata: Metadata = {
@@ -19,7 +13,7 @@ export default function LoginPage() {
       <CardHeader>
         <CardTitle className="font-display text-2xl">Welcome back</CardTitle>
         <CardDescription>
-          Sign in to book services, manage jobs, or oversee the platform.
+          Sign in to book services,or oversee the platform.
         </CardDescription>
       </CardHeader>
       <CardContent>

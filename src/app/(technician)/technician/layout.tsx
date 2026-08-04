@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  CalendarClock,
-  CalendarDays,
-  LayoutDashboard,
-  Star,
-  User,
-  Wallet,
-  Wrench,
-} from "lucide-react";
+import {CalendarClock,CalendarDays,LayoutDashboard,Star,User,Wallet,Wrench} from "lucide-react";
 
 import { AuthGuard } from "@/components/shared/auth-guard";
 import { DashboardShell, type DashboardNavItem } from "@/components/shared/dashboard-shell";

@@ -1,14 +1,9 @@
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+  useMutation, useQuery, useQueryClient,
   type UseMutationOptions,
 } from "@tanstack/react-query";
 import {
-  createService,
-  getServiceById,
-  getServices,
-  updateService,
+  createService, getServiceById, getServices, updateService,
   type CreateServicePayload,
   type UpdateServicePayload,
 } from "@/features/services/api";
@@ -22,12 +17,6 @@ export const serviceKeys = {
   detail: (id: string) => ["services", "detail", id] as const,
 };
 
-/**
- * Fetches the full filtered result set from the backend (only the
- * confirmed category/location/minPrice/maxPrice/rating params are sent).
- * Client-side search/sort/pagination are then applied on top in the
- * page component, since the backend doesn't expose those params.
- */
 export function useServicesQuery(filters?: ServiceFilters) {
   return useQuery<Service[], ApiError>({
     queryKey: serviceKeys.list(filters),
@@ -53,8 +42,7 @@ export function useCreateServiceMutation(
     mutationFn: createService,
     onSuccess: (...args) => {
       queryClient.invalidateQueries({ queryKey: serviceKeys.all });
-      // A technician's services come back nested on the technicians list
-      // (GET /technicians), so that cache needs invalidating too.
+      
       queryClient.invalidateQueries({ queryKey: technicianKeys.list() });
       options?.onSuccess?.(...args);
     },

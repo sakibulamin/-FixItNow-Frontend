@@ -5,7 +5,7 @@ import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { Toaster } from "@/components/ui/sonner";
 
-/** Root provider composition: Theme -> React Query -> Auth -> app. */
+
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider

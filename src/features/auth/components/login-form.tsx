@@ -8,14 +8,8 @@ import { Eye, EyeOff, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel,
+          FormMessage } from "@/components/ui/form";
 import { useAuth } from "@/providers/auth-provider";
 import { loginSchema, type LoginFormValues } from "@/features/auth/schema";
 import { AUTH_ROUTES } from "@/lib/routes";
@@ -33,8 +27,7 @@ export function LoginForm() {
     try {
       await login(values);
     } catch {
-      // Error toast is already handled centrally in AuthProvider's
-      // loginMutation.onError — nothing further to do here.
+
     }
   }
 
@@ -103,7 +96,7 @@ export function LoginForm() {
         </Button>
 
         <p className="text-muted-foreground text-center text-sm">
-          Don&apos;t have an account?{" "}
+          Do not have an account?{" "}
           <Link
             href={AUTH_ROUTES.REGISTER}
             className="text-primary font-medium underline-offset-4 hover:underline"

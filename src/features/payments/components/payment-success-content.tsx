@@ -5,20 +5,12 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import {
-  AlertTriangle,
-  CheckCircle2,
-  Loader2,
-  Receipt,
-  Wrench,
-} from "lucide-react";
+import { AlertTriangle, CheckCircle2, Loader2, Receipt, Wrench } from "lucide-react";
 
 import { bookingKeys, useBookingQuery } from "@/features/bookings/hooks";
 import { PayNowButton } from "@/features/payments/components/pay-now-button";
 import {
-  PAYMENT_POLL_INTERVAL_MS,
-  PAYMENT_POLL_MAX_ATTEMPTS,
-  isPaymentSettling,
+  PAYMENT_POLL_INTERVAL_MS, PAYMENT_POLL_MAX_ATTEMPTS, isPaymentSettling,
 } from "@/features/payments/utils";
 import { ErrorState } from "@/components/shared/error-state";
 import { StatusBadge } from "@/components/shared/status-badge";
@@ -34,7 +26,7 @@ export function PaymentSuccessContent() {
   const searchParams = useSearchParams();
   const bookingId = searchParams.get("bookingId") ?? undefined;
   const queryClient = useQueryClient();
- 
+
   const notifiedRef = useRef(false);
 
   const {
@@ -62,8 +54,7 @@ export function PaymentSuccessContent() {
     }
   }, [booking?.payment?.status, queryClient]);
 
-  // No bookingId in the redirect URL — we have no way to verify anything
-  // specific, so we show a generic acknowledgement rather than guessing.
+
   if (!bookingId) {
     return (
       <StatusShell
@@ -79,7 +70,7 @@ export function PaymentSuccessContent() {
     );
   }
 
-  if (isPending ) {
+  if (isPending) {
     return (
       <div className="mx-auto max-w-md space-y-4 px-4 py-16">
         <Skeleton className="mx-auto size-14 rounded-full" />
@@ -101,7 +92,7 @@ export function PaymentSuccessContent() {
     );
   }
 
-  const isSettling = isPaymentSettling(booking) ;
+  const isSettling = isPaymentSettling(booking);
   const paymentStatus = booking?.payment?.status;
 
   if (isSettling) {
@@ -159,8 +150,6 @@ export function PaymentSuccessContent() {
     );
   }
 
-  // Polling exhausted without a terminal status — don't spin forever or
-  // guess; tell the person plainly and let them check back or refresh.
   return (
     <StatusShell
       icon={AlertTriangle}

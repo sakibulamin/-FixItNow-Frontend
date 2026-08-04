@@ -6,11 +6,7 @@ import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-import {
-  AUTH_REFRESH_COOKIE,
-  AUTH_ROLE_COOKIE,
-  AUTH_TOKEN_COOKIE,
-} from "@/lib/constants";
+import {AUTH_REFRESH_COOKIE,AUTH_ROLE_COOKIE,AUTH_TOKEN_COOKIE} from "@/lib/constants";
 import { AUTH_ROUTES, ROLE_HOME_ROUTE } from "@/lib/routes";
 import { getTokenExpiryDate } from "@/lib/jwt";
 import { authKeys, useLoginMutation, useMeQuery, useRegisterMutation } from "@/features/auth/hooks";
@@ -41,10 +37,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const [hasToken, setHasToken] = React.useState(() => {
-  if (typeof window === "undefined") return false;
-  return Boolean(Cookies.get(AUTH_TOKEN_COOKIE));
-});
+ const [hasToken, setHasToken] = React.useState(false);
+
+React.useEffect(() => {
+  setHasToken(Boolean(Cookies.get(AUTH_TOKEN_COOKIE)));
+}, []);;
 
 const meQuery = useMeQuery(hasToken);
 
@@ -57,8 +54,7 @@ const meQuery = useMeQuery(hasToken);
     queryClient.removeQueries({ queryKey: authKeys.me });
   }, [queryClient]);
 
-  // If /auth/me fails (expired/invalid token that somehow wasn't caught by
-  // the axios 401 interceptor yet), fall back to clearing local session.
+
   React.useEffect(() => {
   if (!meQuery.isError) return;
 
@@ -71,6 +67,7 @@ const meQuery = useMeQuery(hasToken);
 
   const loginMutation = useLoginMutation({
     onSuccess: (data) => {
+      console.log("Login Response:", data.user);
       const accessExpiry = getTokenExpiryDate(data.accessToken);
       const refreshExpiry = getTokenExpiryDate(data.refreshToken);
 

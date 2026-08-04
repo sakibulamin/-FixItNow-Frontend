@@ -21,16 +21,6 @@ import { formatCurrency, formatDateTime } from "@/lib/utils";
 import { CUSTOMER_ROUTES } from "@/lib/routes";
 import type { BookingStatus } from "@/types/enums";
 
-/**
- * Cancellation is only exposed for REQUESTED and ACCEPTED — i.e. before
- * any payment has been made. PAID is deliberately excluded: nothing in
- * the confirmed backend API documents a supported "cancel after payment"
- * transition, and the single PUT /bookings/:id status endpoint doesn't
- * distinguish a refund-triggering cancel from a no-op one. Exposing
- * Cancel on a PAID booking would let the UI claim a capability the
- * backend hasn't confirmed. If your backend does support this, tell me
- * and I'll widen this list.
- */
 const CANCELLABLE_STATUSES: BookingStatus[] = ["REQUESTED", "ACCEPTED"];
 
 export default function BookingDetailsPage({
@@ -41,8 +31,7 @@ export default function BookingDetailsPage({
   const { bookingId } = use(params);
   const { data: booking, isPending, isError, refetch } = useBookingQuery(bookingId);
 
-  // GET /payments/:id takes a payment id — only call it once the booking
-  // actually has a payment record with an id.
+
   const { data: payment } = usePaymentQuery(booking?.payment?.id);
 
   if (isPending) {

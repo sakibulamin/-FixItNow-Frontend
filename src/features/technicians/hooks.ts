@@ -1,14 +1,9 @@
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+  useMutation, useQuery, useQueryClient,
   type UseMutationOptions,
 } from "@tanstack/react-query";
 import {
-  createTechnicianProfile,
-  getTechnicianById,
-  getTechnicians,
-  updateTechnicianProfile,
+  createTechnicianProfile, getTechnicianById, getTechnicians, updateTechnicianProfile,
   type CreateTechnicianProfilePayload,
   type UpdateTechnicianProfilePayload,
 } from "@/features/technicians/api";
@@ -39,14 +34,7 @@ export function useTechnicianQuery(id: string) {
   });
 }
 
-/**
- * There is no GET /technicians/me or any "filter by userId" query param
- * confirmed on GET /technicians (implementation plan gap #5) — so the
- * logged-in technician's own profile is resolved by fetching the full
- * list and matching on userId. Flagged as a real inefficiency, not a
- * hidden one: if your backend adds a scoped endpoint, this hook is the
- * only place that needs to change.
- */
+
 export function useMyTechnicianProfile() {
   const { user } = useAuth();
   const query = useTechniciansQuery();

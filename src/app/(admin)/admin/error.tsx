@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function AdminError({ error,reset,}: {
+export default function AdminError({ error, reset }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {

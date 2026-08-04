@@ -34,7 +34,7 @@ export default function AdminCategoriesPage() {
       )}
 
       {isError && (
-        <ErrorState title="Couldn't load categories"
+        <ErrorState title="Could not load categories"
           description="Something went wrong loading GET /categories."
           onRetry={() => refetch()}
         />

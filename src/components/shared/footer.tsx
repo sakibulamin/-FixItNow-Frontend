@@ -88,9 +88,9 @@ export function Footer() {
         </div>
 
         <div className="text-muted-foreground mt-10 flex flex-col items-center justify-between gap-3 border-t pt-6 text-xs sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} FixItNow. All rights reserved.</p>
-          <p className="font-mono">Trusted home services, on your schedule.</p>
+      
         </div>
+        <p className="text-center font-display text-sm font-semibold">&copy; {new Date().getFullYear()} FixItNow. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -26,10 +26,7 @@ export default function TechnicianEarningsPage() {
       byMonth.set(key, (byMonth.get(key) ?? 0) + (booking.payment?.amount ?? 0));
     }
 
-    const chartData = Array.from(byMonth.entries()).map(([month, amount]) => ({
-      month,
-      amount,
-    }));
+    const chartData = Array.from(byMonth.entries()).map(([month, amount]) => ({month,amount}));
 
     return { paidBookings: paid, totalEarnings: total, monthly: chartData };
   }, [bookings]);

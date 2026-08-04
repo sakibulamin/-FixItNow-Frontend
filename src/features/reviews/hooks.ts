@@ -1,7 +1,5 @@
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+  useMutation, useQuery, useQueryClient,
   type UseMutationOptions,
 } from "@tanstack/react-query";
 import { createReview, getReviews } from "@/features/reviews/api";

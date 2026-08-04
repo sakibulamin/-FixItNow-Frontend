@@ -89,7 +89,7 @@ export default function AdminUsersPage() {
 
       {!isPending && !isError && paginatedItems.length > 0 && (
         <>
-          {/* Mobile-first: stacked cards below sm, table from sm up */}
+          {/* Mobile-first: stacked cards below sm */}
           <div className="space-y-2 sm:hidden">
             {paginatedItems.map((user) => (
               <Card key={user.id} className="p-4">

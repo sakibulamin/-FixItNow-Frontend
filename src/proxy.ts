@@ -9,14 +9,7 @@ import {
 } from "@/lib/routes";
 import type { Role } from "@/types/enums";
 
-/**
- * Next.js 16 renamed middleware.ts to proxy.ts (function renamed
- * `middleware` -> `proxy`) to make the request-interception boundary
- * explicit. Behavior here is unchanged from the previous middleware.ts —
- * this file just runs on the Node.js runtime now instead of Edge, which
- * doesn't affect this logic since it only reads cookies and redirects.
- * `config.matcher` syntax is unchanged between the two conventions.
- */
+
 
 const ROLE_PREFIX_MAP: { prefix: string; role: Role }[] = [
   { prefix: CUSTOMER_ROUTE_PREFIX, role: ROLES.CUSTOMER },
@@ -40,8 +33,7 @@ export function proxy(request: NextRequest) {
     pathname.startsWith(prefix),
   );
 
-  // Already-authenticated users shouldn't see /login or /register again —
-  // send them straight to their own dashboard.
+
   const isAuthRoute = AUTH_ROUTE_PREFIXES.some(
     (route) => route === pathname,
   );
@@ -51,15 +43,13 @@ export function proxy(request: NextRequest) {
   }
 
   if (matchedProtected) {
-    // No session at all -> send to login, preserving where they were headed.
+ 
     if (!isAuthenticated) {
       const loginUrl = new URL("/login", request.url);
       loginUrl.searchParams.set("callbackUrl", pathname);
       return NextResponse.redirect(loginUrl);
     }
 
-    // Authenticated but wrong role for this section -> send to their own
-    // dashboard instead of showing a dead end or someone else's data.
     if (role !== matchedProtected.role) {
       return NextResponse.redirect(new URL(ROLE_HOME_ROUTE[role as Role], request.url));
     }
@@ -70,14 +60,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match everything except:
-     * - Next internals (_next/static, _next/image)
-     * - Static files (favicon, images, etc.)
-     * - API routes (this frontend has none — all API calls go to the
-     *   external backend directly from the client/axios, not through
-     *   Next.js Route Handlers)
-     */
+    
     "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|webp|gif|ico)$).*)",
   ],
 };

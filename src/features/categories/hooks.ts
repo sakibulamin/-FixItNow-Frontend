@@ -1,14 +1,9 @@
 import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+  useMutation, useQuery, useQueryClient,
   type UseMutationOptions,
 } from "@tanstack/react-query";
 import {
-  createCategory,
-  deleteCategory,
-  getCategories,
-  updateCategory,
+  createCategory, deleteCategory, getCategories, updateCategory,
   type CategoryPayload,
 } from "@/features/categories/api";
 import type { ApiError } from "@/types/api";
@@ -23,7 +18,7 @@ export function useCategoriesQuery() {
   return useQuery<Category[], ApiError>({
     queryKey: categoryKeys.list(),
     queryFn: getCategories,
-    staleTime: 5 * 60 * 1000, // categories change rarely
+    staleTime: 5 * 60 * 1000, 
   });
 }
 

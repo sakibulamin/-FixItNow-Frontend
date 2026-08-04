@@ -1,11 +1,6 @@
 import { QueryClient } from "@tanstack/react-query";
 
-/**
- * Factory so each request/browser session gets its own QueryClient instance
- * (avoids leaking cached data across users during SSR, and avoids
- * recreating it on every client render since QueryProvider calls this
- * inside useState()).
- */
+
 export function createQueryClient() {
   return new QueryClient({
     defaultOptions: {

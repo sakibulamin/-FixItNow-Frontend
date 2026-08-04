@@ -8,25 +8,13 @@ import { Eye, EyeOff, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useAuth } from "@/providers/auth-provider";
 import { registerSchema, type RegisterFormValues } from "@/features/auth/schema";
 import { AUTH_ROUTES } from "@/lib/routes";
 import { ROLES } from "@/lib/constants";
+import { NextResponse } from "next/server";
 
 export function RegisterForm() {
   const { register: registerUser, isRegistering } = useAuth();
@@ -53,9 +41,9 @@ export function RegisterForm() {
         phone: payload.phone || undefined,
         address: payload.address || undefined,
       });
-    } catch {
-      // Error toast is already handled centrally in AuthProvider's
-      // registerMutation.onError — nothing further to do here.
+    } catch (error) {
+      console.error("API failed:", error);
+      return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
     }
   }
 

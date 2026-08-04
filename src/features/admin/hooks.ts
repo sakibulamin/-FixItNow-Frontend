@@ -1,14 +1,7 @@
-import {
-  useMutation,
-  useQuery,
-  useQueryClient,
+import {useMutation,useQuery,useQueryClient,
   type UseMutationOptions,
 } from "@tanstack/react-query";
-import {
-  getAdminBookings,
-  getAdminDashboardStats,
-  getAdminUsers,
-  updateAdminUserStatus,
+import {getAdminBookings,getAdminDashboardStats,getAdminUsers,updateAdminUserStatus,
   type UpdateAdminUserStatusPayload,
 } from "@/features/admin/api";
 import type { ApiError } from "@/types/api";
@@ -51,11 +44,7 @@ interface UpdateUserStatusVariables {
   payload: UpdateAdminUserStatusPayload;
 }
 
-/**
- * Optimistically flips the user's status in the cached admin users list so
- * Ban/Unban feels instant, rolls back on error, and re-invalidates on
- * settle so confirmed server state wins.
- */
+
 export function useUpdateAdminUserStatusMutation(
   options?: UseMutationOptions<
     User,
