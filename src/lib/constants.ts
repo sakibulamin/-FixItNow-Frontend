@@ -1,8 +1,9 @@
 
 export const APP_NAME = "FixItNow";
 
+
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:5000/api";
+  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000/api";
 
 export const AUTH_TOKEN_COOKIE =
   process.env.NEXT_PUBLIC_AUTH_TOKEN_COOKIE ?? "fixitnow_access_token";
@@ -12,6 +13,7 @@ export const AUTH_REFRESH_COOKIE =
 
 export const AUTH_ROLE_COOKIE =
   process.env.NEXT_PUBLIC_AUTH_ROLE_COOKIE ?? "fixitnow_user_role";
+
 
 export const ROLES = {
   CUSTOMER: "CUSTOMER",
@@ -43,5 +45,5 @@ export const PAYMENT_STATUSES = {
 
 export const PAYMENT_PROVIDERS = {
   SSLCOMMERZ: "SSLCOMMERZ",
-  STRIPE: "STRIPE",
+  
 } as const;

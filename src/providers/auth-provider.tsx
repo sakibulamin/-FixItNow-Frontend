@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-import {AUTH_REFRESH_COOKIE,AUTH_ROLE_COOKIE,AUTH_TOKEN_COOKIE} from "@/lib/constants";
+import { AUTH_REFRESH_COOKIE, AUTH_ROLE_COOKIE, AUTH_TOKEN_COOKIE } from "@/lib/constants";
 import { AUTH_ROUTES, ROLE_HOME_ROUTE } from "@/lib/routes";
 import { getTokenExpiryDate } from "@/lib/jwt";
 import { authKeys, useLoginMutation, useMeQuery, useRegisterMutation } from "@/features/auth/hooks";
@@ -37,13 +37,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const queryClient = useQueryClient();
 
- const [hasToken, setHasToken] = React.useState(false);
+  const [hasToken, setHasToken] = React.useState(false);
 
-React.useEffect(() => {
-  setHasToken(Boolean(Cookies.get(AUTH_TOKEN_COOKIE)));
-}, []);;
+  React.useEffect(() => {
+    setHasToken(Boolean(Cookies.get(AUTH_TOKEN_COOKIE)));
+  }, []);
 
-const meQuery = useMeQuery(hasToken);
+  const meQuery = useMeQuery(hasToken);
 
   const clearSession = React.useCallback(() => {
     Cookies.remove(AUTH_TOKEN_COOKIE, { path: "/" });
@@ -56,14 +56,14 @@ const meQuery = useMeQuery(hasToken);
 
 
   React.useEffect(() => {
-  if (!meQuery.isError) return;
+    if (!meQuery.isError) return;
 
-  const id = setTimeout(() => {
-    clearSession();
-  }, 0);
+    const id = setTimeout(() => {
+      clearSession();
+    }, 0);
 
-  return () => clearTimeout(id);
-}, [meQuery.isError, clearSession]);
+    return () => clearTimeout(id);
+  }, [meQuery.isError, clearSession]);
 
   const loginMutation = useLoginMutation({
     onSuccess: (data) => {

@@ -59,10 +59,10 @@ export default function BookingDetailsPage({
   }
 
   const canCancel = CANCELLABLE_STATUSES.includes(booking.status);
-  const canPay = booking.status === "ACCEPTED";
   const canReview = booking.status === "COMPLETED";
   const canDelete = booking.status === "DECLINED" || booking.status === "CANCELLED";
   const effectivePayment = payment ?? booking.payment ?? null;
+  const canPay = booking.status === "ACCEPTED" && effectivePayment?.status !== "COMPLETED";
 
   return (
     <div className="max-w-3xl space-y-6">
