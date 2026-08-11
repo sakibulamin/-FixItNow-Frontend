@@ -4,16 +4,11 @@ A full-stack Home Service Marketplace built with Next.js, TypeScript, Tailwind C
 
 ## Live Demo
 
-Frontend Repo : https://github.com/sakibulamin/-FixItNow-Frontend
-
-Live Frontend : https://fix-it-now-frontend-bay.vercel.app/
-
-Backend API : https://dev-pulse-sigma-beige.vercel.app/
-
-Demo Video :https://drive.google.com/file/d/1Cm1wGFuVkLDJiKCgUCH_OZYcEWZ2RpuB/view?usp=sharing
-
+Frontend Repo    : https://github.com/sakibulamin/-FixItNow-Frontend
+Live Frontend    : https://fix-it-now-frontend-bay.vercel.app
+Backend API      : https://fixitnow-server-ivory.vercel.app
+Demo Video       : https://drive.google.com/file/d/1TAhOiwojVmJeDKqr63yUjFG2XMXMrc08/view?usp=sharing
 Admin Email :sakib@gmail.com
-
 Admin Password :12345678
 
 
