@@ -157,6 +157,11 @@ The frontend application is deployed on Vercel.
 
 [Visit FixItNow](https://fix-it-now-frontend-bay.vercel.app)
 
+## 🔑 Demo Credentials
+
+Email: amin@gmail.com                                                                                                                                                        
+Password: 12345678
+
 ## 👨‍💻 Author
 
 **Sakibul Amin**
