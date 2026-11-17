@@ -1,131 +1,170 @@
-# FixItNow
+# 🏠 FixItNow — Home Service Marketplace
 
-A full-stack Home Service Marketplace built with Next.js, TypeScript, Tailwind CSS, React Query, Express.js, PostgreSQL, Prisma, and SSLCommerz.
+A full-stack Home Service Marketplace that connects customers with professional technicians for reliable home services. Built with **Next.js, TypeScript, Tailwind CSS, Express.js, PostgreSQL, Prisma, and SSLCommerz**.
 
-## Live Demo
+FixItNow allows customers to discover services, book technicians, make secure online payments, and share reviews — all through a user-friendly platform.
 
-Frontend Repo    : https://github.com/sakibulamin/-FixItNow-Frontend
-Live Frontend    : https://fix-it-now-frontend-bay.vercel.app
-Backend API      : https://fixitnow-server-ivory.vercel.app
-Demo Video       : https://drive.google.com/file/d/1TAhOiwojVmJeDKqr63yUjFG2XMXMrc08/view?usp=sharing
-Admin Email :sakib@gmail.com
-Admin Password :12345678
+## 🌐 Live Demo
 
+- **Live Frontend:** [FixItNow Website](https://fix-it-now-frontend-bay.vercel.app)
+- **Backend API:** [Backend Server](https://fixitnow-server-ivory.vercel.app)
+- **Frontend Repository:** [GitHub Repository](https://github.com/sakibulamin/-FixItNow-Frontend)
+- **Backend Repository:** [GitHub Repository](https://github.com/sakibulamin/FixItNow-Backend-API)
 
+## 📖 Project Overview
 
-## Project Overview
+FixItNow is a home service marketplace designed to make booking professional home services easier and more convenient.
 
-FixItNow is a home service marketplace where customers can book technicians for different services such as plumbing, electrical, cleaning, painting, and more.
+Customers can browse different service categories, find technicians, book services, complete online payments, and leave reviews.
 
-There are three user roles:
+The platform supports three different user roles with dedicated features and permissions.
 
- Customer
- Technician
- Admin
+## 👥 User Roles & Features
 
-Customers can browse services, create bookings, complete payments using SSLCommerz, and leave reviews.
+### 👤 Customer
 
-Technicians manage services and bookings.
+- Browse available home services.
+- View technician profiles and details.
+- Book home services.
+- Make online payments using SSLCommerz.
+- View booking history.
+- Review and rate technicians.
+- Update personal profile.
 
-Admins manage users, categories, and monitor platform activities.
+### 🔧 Technician
 
+- Create and manage technician profiles.
+- Create and manage services.
+- Accept or reject booking requests.
+- Update booking status.
+- Manage service availability.
 
+### 🛡️ Admin
 
+- Access the admin dashboard.
+- View platform statistics.
+- Manage users.
+- Manage service categories.
+- View and monitor all bookings.
 
-### Authentication
+## 🔐 Authentication & Authorization
 
-JWT Authentication
-Login
-Registration
-Role Based Access
-Protected Routes
+- JWT-based authentication.
+- User registration and login.
+- Role-Based Access Control (RBAC).
+- Protected routes.
+- Role-specific permissions.
 
-### Customer
+## 💳 Payment Integration
 
- Browse Services
- View Technician Details
- Book Services
- SSLCommerz Payment
- Booking History
- Review Technician
- Update Profile
+Integrated **SSLCommerz Payment Gateway** for online transactions.
 
-### Technician
+Supported payment statuses:
 
- Create Technician Profile
- Manage Services
- Accept / Reject Bookings
- Update Booking Status
- Availability Management
+- Pending
+- Completed
+- Failed
+- Cancelled
 
-### Admin
-
- Dashboard Statistics
- Manage Users
- Manage Categories
- View Bookings
-
-
-
-## Payment
-
-SSLCommerz Payment Gateway
-
-Payment Status
-
-Pending
-Completed
-Failed
-Cancelled
-
-
+## 🛠️ Technologies Used
 
 ### Frontend
 
-Next.js 16
-React 19
-TypeScript
-Tailwind CSS
-Shadcn UI
-React Query
-React Hook Form
-Zod
-Axios
-Sonner
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- TanStack React Query
+- React Hook Form
+- Zod
+- Axios
+- Sonner
 
 ### Backend
 
-Node.js
-Express.js
-TypeScript
-Prisma ORM
-PostgreSQL
-JWT
+- Node.js
+- Express.js
+- TypeScript
+- Prisma ORM
+- PostgreSQL
+- JWT Authentication
 
+### Payment Gateway
 
-##  Installation
+- SSLCommerz
 
-Install packages
+### Tools & Deployment
 
-bash
+- Git & GitHub
+- Postman
+- VS Code
+- Vercel
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sakibulamin/-FixItNow-Frontend.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd -FixItNow-Frontend
+```
+
+### 3. Install Dependencies
+
+```bash
 npm install
+```
 
+### 4. Configure Environment Variables
 
+Create a `.env.local` file in the project root and configure the required environment variables.
 
-Run project
+```env
+NEXT_PUBLIC_API_URL=your_backend_api_url
+```
 
-bash
+Add any additional environment variables required by your application.
+
+### 5. Run Development Server
+
+```bash
 npm run dev
+```
 
+Open your browser:
 
-## Build
+```text
+http://localhost:3000
+```
 
-bash
+## 🏗️ Build for Production
+
+To create a production build:
+
+```bash
 npm run build
+```
 
+## 🚀 Deployment
 
-## Author
+The frontend application is deployed on Vercel.
 
-Sakibul Amin
+[Visit FixItNow](https://fix-it-now-frontend-bay.vercel.app)
 
-GitHub:https://github.com/sakibulamin
+## 👨‍💻 Author
+
+**Sakibul Amin**
+
+Full-Stack Developer
+
+- **GitHub:** [github.com/sakibulamin](https://github.com/sakibulamin)
+- **Portfolio:** [sakibul-amin.vercel.app](https://sakibul-amin.vercel.app)
+- **LinkedIn:** [linkedin.com/in/sakibul-amin7](https://www.linkedin.com/in/sakibul-amin7)
+- **Email:** info.sakibulamin@gmail.com
+
